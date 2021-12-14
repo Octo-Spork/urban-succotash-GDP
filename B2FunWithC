@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+int main() {
+
+  char Ddest[20];
+  void copy(char*Ssource, char*Ddest);
+  copy("Hello World", Ddest);
+  printf("%s\n", Ddest);
+  int werte[4] = {2,9,6,3}; int lange = 3;
+  /*for (int i = 0; i <= lange; i++) {
+    printf("%d \n", werte[i]);
+  }*/
+  //for (size_t i = 0; i < lange-1; i++) {
+    //printf(werte[i]);
+    /* code */
+  //}
+
+  int calc(int*digits, int length);
+  printf("%d\n", calc(werte,lange));
+
+
+  //printf("%s\n", "Hello, World!");
+  return 0;
+}
+
+void copy(char * source, char * dest) {
+  while (*dest++ = *source++); // using result of condition
+}
+
+int calc(int*digits, int length){
+  int result = 0;
+  for (int i = 0; i < length; i+=2){
+    digits[i] = *(digits + i) << 1;
+    if (digits[i] > 9)
+            digits[i] -= 9;
+  }
+  for (int i = 0; i < length; i++) {
+    result += digits[i];
+  }
+  return result % 10;
+}
